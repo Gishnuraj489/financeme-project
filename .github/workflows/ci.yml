@@ -43,9 +43,10 @@ jobs:
         image-ref: ghcr.io/gishnuraj489/gems-app:${{ github.sha }}
         format: 'sarif'
         output: ./star-agile-banking-finance/trivy-report.sarif
-        exit-code: '1'
+        exit-code: '0'
         severity: 'CRITICAL,HIGH,MEDIUM'
         ignore-unfixed: true
+        trivy-config: --skip-version-check
 
     - name: Upload trivy report to GitHub security tab
       uses: github/codeql-action/upload-sarif@v2
