@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag gems-image:$(date +%s)
+      run: docker build -t gems-image:$(date +%s) -f ./star-agile-banking-finance/Dockerfile ./star-agile-banking-finance
